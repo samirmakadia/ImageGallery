@@ -20,6 +20,20 @@
                ReferencedContainer = "container:FlickrImageGallery.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "28481BB51F1E015B006B6961"
+               BuildableName = "FlickrImageGalleryTests.xctest"
+               BlueprintName = "FlickrImageGalleryTests"
+               ReferencedContainer = "container:FlickrImageGallery.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

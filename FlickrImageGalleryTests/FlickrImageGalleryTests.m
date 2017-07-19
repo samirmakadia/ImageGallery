@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "WCClasses.h"
 
 @interface FlickrImageGalleryTests : XCTestCase
 
@@ -24,16 +25,27 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-}
-
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{
         // Put the code you want to measure the time of here.
+
     }];
 }
+- (void)testFeedLoading  {
+    //XCTAssertNotNil(nil, "data should not be nil");
+   // XCTAssertGreaterThan(-1, 0,"data should be greather than 0");
+    
+    XCTestExpectation *expectation = [self expectationWithDescription:@"asynchronous request"];
+    [WCClasses loadFeedByTag:@"" complete:^(NSArray *data){
+        XCTAssertNotNil(data, "data should not be nil");
+        [expectation fulfill];
+    }fail:^(NSError *error){
+        XCTFail(@"Somthing wrong");
+        [expectation fulfill];
+    }];
+    [self waitForExpectationsWithTimeout:10.0 handler:nil];
+}
+
 
 @end
